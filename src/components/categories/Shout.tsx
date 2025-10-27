@@ -1,4 +1,4 @@
-export default function RevenueTable() {
+const Shout = () => {
   return (
     <div
       id="things-you-shout"
@@ -16,4 +16,6 @@ export default function RevenueTable() {
       </ul>
     </div>
   );
-}
+};
+
+export default Shout;

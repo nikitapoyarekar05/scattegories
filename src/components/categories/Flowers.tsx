@@ -1,4 +1,4 @@
-export default function ActivityFeed() {
+const Flowers = () => {
   return (
     <div
       id="flowers"
@@ -14,4 +14,6 @@ export default function ActivityFeed() {
       </ul>
     </div>
   );
-}
+};
+
+export default Flowers;

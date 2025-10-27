@@ -1,4 +1,4 @@
-export default function UserStats() {
+const RawFood = () => {
   return (
     <div
       id="raw-foods"
@@ -21,4 +21,6 @@ export default function UserStats() {
       </ul>
     </div>
   );
-}
+};
+
+export default RawFood;

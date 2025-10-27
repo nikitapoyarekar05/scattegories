@@ -1,4 +1,4 @@
-export default function SalesChart() {
+const NickNames = () => {
   return (
     <div
       id="nicknames"
@@ -14,4 +14,6 @@ export default function SalesChart() {
       </ul>
     </div>
   );
-}
+};
+
+export default NickNames;
