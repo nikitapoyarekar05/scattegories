@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Lazy Loading Scattegories
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight demo built with **Vite** and **TypeScript** to illustrate how **lazy loading** and **dynamic imports** work in modern JavaScript applications.  
+Each category (like *Cartoon Characters*, *Flowers*, *Nicknames*, etc.) is loaded only when requested, demonstrating the principle of **on-demand code execution** and **bundle splitting**.
 
-Currently, two official plugins are available:
+## Demo Overview
+The app displays five buttons, each representing a category.  
+When a button is clicked, its corresponding module is dynamically imported and rendered in the view.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Example categories
+- Cartoon Characters  
+- Flowers  
+- Things You Shout  
+- Nicknames  
+- Foods You Eat Raw  
 
-## React Compiler
+Each category loads its own JS chunk only when needed, reducing initial load size.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Concepts Demonstrated
 
-## Expanding the ESLint configuration
+| Concept | Description |
+|----------|--------------|
+| **Dynamic Imports** | Uses `import()` to load JavaScript modules only when triggered. |
+| **Lazy Loading** | Loads content or components asynchronously for better performance. |
+| **Code Splitting** | Vite automatically creates separate chunks for each dynamically imported module. |
+| **Minimal UI Demo** | A simple interface using TailwindCSS classes to visualize the lazy loading flow. |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Vite](https://vitejs.dev/) – Fast build tool for modern web apps  
+- [TypeScript](https://www.typescriptlang.org/) – Type-safe JavaScript  
+- [TailwindCSS](https://tailwindcss.com/) – Utility-first CSS styling  
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Clone the repo
+```bash
+git clone https://github.com/nikitapoyarekar05/scattegories.git
+cd scattegories
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install dependencies
+```bash
+npm install
 ```
+
+### Run the dev server
+```bash
+npm run dev
+```
+The app will start at `http://localhost:5173` by default.
+
+## Project Structure
+
+```
+scattegories/
+│
+├── src/
+│   ├── main.ts               # Entry file
+│   ├── App.tsx               # Root component
+│   ├── components/
+│   │   ├── Dashboard.tsx
+│   │   ├── CategoryLoader.tsx
+│   │   ├── categories/
+│   │   │   ├── CartoonCharacters.ts
+│   │   │   ├── Flowers.ts
+│   │   │   ├── Shout.ts
+│   │   │   ├── Nicknames.ts
+│   │   │   └── RawFood.ts
+│   └── ...
+│
+├── vite.config.ts
+├── tsconfig.json
+└── package.json
+```
+
+## Author
+Built with ❤️ by [@nikitapoyarekar05](https://github.com/nikitapoyarekar05)
