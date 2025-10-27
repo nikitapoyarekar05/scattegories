@@ -1,11 +1,9 @@
 # Lazy Loading Scattegories
 
-A lightweight demo built with **Vite** and **TypeScript** to illustrate how **lazy loading** and **dynamic imports** work in modern JavaScript applications.  
-Each category (like *Cartoon Characters*, *Flowers*, *Nicknames*, etc.) is loaded only when requested, demonstrating the principle of **on-demand code execution** and **bundle splitting**.
+A lightweight demo built with **Vite** and **TypeScript** to illustrate how **lazy loading** and **dynamic imports** work in modern JavaScript applications. Each category (like *Cartoon Characters*, *Flowers*, *Nicknames*, etc.) is loaded only when requested, demonstrating the principle of **on-demand code execution** and **bundle splitting**.
 
 ## Demo Overview
-The app displays five buttons, each representing a category.  
-When a button is clicked, its corresponding module is dynamically imported and rendered in the view.
+The app displays five buttons, each representing a category. When a button is clicked, its corresponding module is dynamically imported and rendered in the view.
 
 ### Example categories
 - Cartoon Characters  
